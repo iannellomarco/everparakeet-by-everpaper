@@ -1,0 +1,35 @@
+EverParakeet by EverPaper (iPhone demo)
+=======================================
+
+Demo code: Copyright 2026 Everpaper, CC-BY-4.0 (see LICENSE).
+
+Packages/EverParakeetKit/
+    The EverParakeet Swift runtime, version 1.1.1, copied unchanged from the swift/ folder of the Hugging Face
+    repository EverPaper/everparakeet-tdt-0.6b-v3-coreai at revision 3273ae066c0d7f46940de4917fb731fdb89558b7. Every
+    file matches the CHECKSUMS.sha256 of that revision. It is CC-BY-4.0, except three files adapted from Apple's
+    Core AI speech sample code (coreai-models repository), which are under Apple's BSD 3-clause licence with the
+    header "Portions Copyright 2026 Apple Inc. Modifications Copyright 2026 Everpaper.":
+        Sources/EverParakeetKit/MelFrontEnd.swift
+        Sources/EverParakeetCoreAI/CoreAIEncoder.swift
+        Sources/EverParakeetKit/AudioLoader.swift
+    The full Apple licence text is in Packages/EverParakeetKit/THIRD_PARTY_NOTICES. Keep that file, and the headers
+    in those three files, if you copy the package.
+
+Model weights (downloaded, not included)
+    scripts/fetch-model.sh downloads EverParakeet from Hugging Face. The weights are a derivative of
+    NVIDIA Parakeet TDT 0.6B v3 (https://huggingface.co/nvidia/parakeet-tdt-0.6b-v3), Copyright NVIDIA Corporation,
+    CC-BY-4.0. All credit for the architecture, the tokenizer and the multilingual training goes to NVIDIA. This is
+    not an official NVIDIA distribution and NVIDIA does not endorse it. The list of modifications is in the NOTICE
+    file of the model repository.
+
+Samples/
+    english.wav, italian.wav, italian_then_english.wav and long_italian.wav are made from recordings in FLEURS
+    (Google), https://huggingface.co/datasets/google/fleurs, licensed CC-BY-4.0: the test split, en_us and it_it
+    (utterance ids are listed in README.md). The recordings are used as released (16 kHz, mono, 16-bit); the
+    clips italian_then_english.wav and long_italian.wav join several of them with 0.4 s of silence between pieces;
+    nothing else was changed. Conneau et al., "FLEURS: Few-shot
+    Learning Evaluation of Universal Representations of Speech", 2022. The clips are shared here under the same
+    CC-BY-4.0 licence. The speakers are anonymous volunteers and no personal data is included.
+
+Fonts
+    None are bundled. The app uses the system fonts (SF, New York, SF Mono).

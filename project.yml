@@ -1,0 +1,58 @@
+# EverParakeet iPhone demo. The Xcode project is generated, not committed: run `xcodegen generate`.
+name: EverParakeetDemo
+options:
+  # Placeholder. Set your own reverse-DNS prefix (and the bundle id below) before you run on a device.
+  bundleIdPrefix: com.example.everparakeet
+  deploymentTarget:
+    iOS: "27.0"
+  createIntermediateGroups: true
+
+packages:
+  EverParakeetKit:
+    path: Packages/EverParakeetKit
+
+targets:
+  EverParakeet:
+    type: application
+    platform: iOS
+    deploymentTarget: "27.0"
+    sources:
+      - App
+      - path: Samples
+        type: folder
+        buildPhase: resources
+      # Filled by scripts/fetch-model.sh. Model/ is a folder reference, so files added later are picked up on the next build.
+      - path: Model
+        type: folder
+        buildPhase: resources
+      - path: Assets.xcassets
+    dependencies:
+      - package: EverParakeetKit
+        product: EverParakeetKit
+      - package: EverParakeetKit
+        product: EverParakeetCoreAI
+    scheme:
+      gatherCoverageData: false
+    info:
+      path: App/Info.plist
+      properties:
+        CFBundleDisplayName: EverParakeet
+        CFBundleShortVersionString: "1.0.0"
+        CFBundleVersion: "1"
+        ITSAppUsesNonExemptEncryption: false
+        NSMicrophoneUsageDescription: EverParakeet listens to your voice only to transcribe it on this iPhone. Audio is never stored or sent anywhere.
+        UILaunchScreen: {}
+        UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: false
+    settings:
+      base:
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        # Placeholder. Change it to an id you own, then select your team in Xcode (Signing & Capabilities).
+        PRODUCT_BUNDLE_IDENTIFIER: com.example.everparakeet.demo
+        PRODUCT_NAME: EverParakeet
+        SWIFT_VERSION: "5.0"
+        TARGETED_DEVICE_FAMILY: "1"
+        INFOPLIST_KEY_UIUserInterfaceStyle: Automatic
+        CODE_SIGN_STYLE: Automatic
+        ENABLE_USER_SCRIPT_SANDBOXING: NO

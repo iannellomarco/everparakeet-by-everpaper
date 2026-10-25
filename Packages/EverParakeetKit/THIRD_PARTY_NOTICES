@@ -1,0 +1,40 @@
+Third-party notices for the EverParakeet Swift runtime
+=======================================================
+
+Parts of the Swift runtime in this folder are adapted from Apple's Core AI
+speech sample code (CoreAISpeech, in Apple's coreai-models repository), which
+is distributed under the licence below.
+
+Three files are adapted from Apple's code and are licensed in full under the BSD
+3-clause licence below, with the header "Portions Copyright 2026 Apple Inc.
+Modifications Copyright 2026 Everpaper.":
+
+  Sources/EverParakeetKit/MelFrontEnd.swift
+      Log-mel front end. Adapted from CoreAISpeech.MelSpectrogram
+      (Sources/CoreAISpeech/MelSpectrogram.swift).
+  Sources/EverParakeetCoreAI/CoreAIEncoder.swift
+      The functions flattenAsFloat and flattenNDArray are adapted from
+      CoreAIShared/Runtime/NDArray+Helpers.swift, and the NDArray input set-up
+      follows Apple's usage pattern.
+  Sources/EverParakeetKit/AudioLoader.swift
+      The chunked audio file reader is adapted from
+      MelSpectrogram.readAllSamples (Sources/CoreAISpeech/MelSpectrogram.swift).
+
+All of these come from Apple's coreai-models repository. Each file carries the
+notice in its header. The rest of the Swift runtime is original Everpaper code
+under CC-BY-4.0 (see ../NOTICE).
+
+Apple licence
+-------------
+
+Copyright 2026 Apple Inc.
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+
+1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+
+2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+
+3. Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
